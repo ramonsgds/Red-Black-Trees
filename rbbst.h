@@ -139,7 +139,7 @@ private:
               }
           }
           else{
-               // std::cout <<"MY PARENT IS BLACK MODAFUCKER" << std::endl;
+               // std::cout <<"MY PARENT IS BLACK" << std::endl;
           }  
       }
 
@@ -228,22 +228,17 @@ void rotate(RedBlackNode<KeyType,ValueType>* node){
                           grandParent->setColor(red);
                       }
                       else{
-                          //std::cout <<"HERE1"<< std::endl;
                           RedBlackNode<KeyType,ValueType>* temp = parent->getLeft();
                           greatGrandParent->setRight(parent);
                           parent->setParent(greatGrandParent);
-                          //std::cout <<"HERE2"<< std::endl;
                           grandParent->setRight(temp);
-                          //std::cout <<"HERE3"<< std::endl;
                           if (temp != NULL){
                             temp->setParent(grandParent);
                           }
-                         // std::cout <<"HERE4"<< std::endl;
                           grandParent->setParent(parent);
                           parent->setLeft(grandParent);
                           parent->setColor(black);
                           grandParent->setColor(red);
-                         // std::cout <<"HERE5"<< std::endl;
                       }
               }
               else{   
